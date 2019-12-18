@@ -1,0 +1,9 @@
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+login:
+  path: /login
+  controller: App\Controller\LoginController::index
+register:
+  path: /register
+  controller: App\Controller\RegisterController::index

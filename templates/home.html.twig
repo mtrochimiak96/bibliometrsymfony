@@ -1,0 +1,109 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+{% block body %}
+	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="navbar-brand" href="#">Bibliometr</a>
+					</li>
+				</div>
+
+				<div class="collapse navbar-collapse">
+					<a class="nav-link" href="/">Strona Główna</a>
+				</li>
+			</div>
+			<li class="nav navbar-nav navbar-right">
+				<a class="nav-link" href="/register">Zarejestruj</a>
+				<a class="nav-link" href="/login">Zaloguj</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<br><br>
+
+<div class="jumbotron">
+
+	<div class="container">
+		<h2>Wyszukiwarka artykułów</h2>
+		<div class="col-md-8 order-md-1">
+			<form action="index.php?action=article_list" method="get" class="needs-validation" novalidate>
+				<input type="hidden" name="action" value="article_list">
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="title">Tytuł</label>
+						<input type="text" class="form-control" name="title" placeholder="" value="" required>
+
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="name">Imię i nazwisko autora</label>
+						<input type="text" class="form-control" name="name" placeholder="" value="" required>
+					</div>
+
+					<div class="col-md-6 mb-3">
+						<label for="date_from">Data od</label>
+						<input type="date" class="form-control" name="date_from" placeholder="" value="" required>
+					</div>
+
+
+					<div class="col-md-6 mb-3">
+						<label for="date_to">Data do</label>
+						<input type="date" class="form-control" name="date_to" placeholder="" value="" required>
+					</div>
+
+					<div class="col-md-6 mb-3">
+						<label for="sel">Sortuj:</label>
+						<select class="form-control" name="sel">
+							<option value="title">Tytuł</option>
+							<option value="author">Autor</option>
+							<option value="publicdate">Data publikacji</option>
+							<option value="minipoint">Punkty</option>
+						</select>
+					</div>
+				</div>
+
+				<legend>Wybierz kolumne</legend>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="title_check" value="">Tytuł
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="author_check" value="">Autor
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="conference_check" value="">Konferencja
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="minipoint_check" value="">Punkty
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="publicdate_check" value="">Data publikacji
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="doi_check" value="">DOI
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="shares_check" value="">Udziały
+					</label>
+				</div>
+				<input type="submit" class="btn btn-success" value="Szukaj">
+				<input type="submit" class="btn btn-success" name="export" value="Eksportuj">
+			</div>
+		</div>
+	</form>
+</div></div>{% endblock %}
